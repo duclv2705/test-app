@@ -1,0 +1,21 @@
+{
+  "name": "insurance-plan-comparison",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Insurance Plan Comparison Page built with Next.js and NestJS",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:web": "npm run start:dev --workspace @insurance/web",
+    "dev:api": "npm run start:dev --workspace @insurance/api",
+    "build": "npm run build --workspace @insurance/api && npm run build --workspace @insurance/web",
+    "build:web": "npm run build --workspace @insurance/web",
+    "build:api": "npm run build --workspace @insurance/api",
+    "start:web": "npm run start --workspace @insurance/web",
+    "start:api": "npm run start:prod --workspace @insurance/api"
+  },
+  "workspaces": ["apps/web", "apps/api"],
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  }
+}
